@@ -106,12 +106,18 @@ def load_data(city, month, day):
 
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
+    """
+    Displays statistics on the most frequent times of travel.
+
+    Args:
+        (dataframe) df - dataframe is passed to carry out operations upon
+    """
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
     print("calculating statistics")
     # display the most common month
+    # mode method is used to find the most occuring number accross [0] is passed to carry out this method accros column.
     common_month = df['month'].mode() [0]
     print('Most Common Month:', common_month)
     
