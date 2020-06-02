@@ -202,6 +202,8 @@ def user_stats(df):
     print('-'*40)
 
 def display_function(df):
+    """ It asks user whether he/she wants to look raw data and according to requirement it displays result"""
+    
     choice = input("\nDo you want to see raw data ?\n enter y for yes and n for no\n").lower()
     index = 0
     while(True):
