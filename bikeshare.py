@@ -134,11 +134,11 @@ def station_stats(df):
     print('Calculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
+    # display most commonly used start station
     common_start_station = df['Start Station'].mode()[0]
     print('Most Commonly used start station:', common_start_station)
 
-    # TO DO: display most commonly used end station
+    # display most commonly used end station
     common_end_station = df['End Station'].mode()[0]
     print('Most Commonly used end station:', common_end_station)
 
@@ -207,6 +207,8 @@ def display_function(df):
     choice = input("\nDo you want to see raw data ?\n enter y for yes and n for no\n").lower()
     index = 0
     while(True):
+        # every time the loop will execute the index will set to the next row after the fifth row
+        #
         print(df.iloc[index : index+5])
         choice = input("\nDo you want to see more raw data ?\n enter y for yes and n for no\n").lower()
         if(choice == "n"):
