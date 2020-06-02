@@ -144,9 +144,8 @@ def station_stats(df):
 
     # display most frequent combination of start station and end station trip
     # it is done to concat start and end station then to find mode
-    most_frequent_combination = df['Start Station']+" - "+df['End Station']
-    most_frequent_combination = most_frequent_combination.mode()[0]
-    print("Most frequent combination of start and end station trip are  ", most_frequent_combination)
+    df['most_frequent_combination'] = df['Start Station']+" - "+df['End Station']
+    print("Most frequent combination of start and end station trip are  ", df['most_frequent_combination'].mode() [0])
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -227,8 +226,8 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        restart = input('\nWould you like to restart? Enter yes or no.\n').lower()
+        if restart != 'yes':
             break
  
 if __name__ == "__main__":
